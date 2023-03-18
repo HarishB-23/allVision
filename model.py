@@ -14,7 +14,7 @@ UNITS = 512
 
 
 # LOADING DATA
-vocab = pickle.load(open(r'C:\Users\bhari\OneDrive\Desktop\Image Captioning\saved_model1\vocab_coco.file', 'rb'))
+vocab = pickle.load(open('vocab_coco.file', 'rb'))
 
 tokenizer = tf.keras.layers.TextVectorization(
     # max_tokens=VOCABULARY_SIZE,
@@ -320,6 +320,6 @@ def get_caption_model():
     sample_enc_out = caption_model.encoder(sample_img_embed, training=False)
     caption_model.decoder(sample_y, sample_enc_out, training=False)
 
-    caption_model.load_weights(r'C:\Users\bhari\OneDrive\Desktop\Image Captioning\saved_model1\model.h5')
+    caption_model.load_weights('model.h5')
 
     return caption_model
