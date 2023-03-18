@@ -78,7 +78,7 @@ def get_prediction():
     st.markdown('#### Predicted Captions:')
     st.write(text)
 
-def talk():
+def talk(text):
     engine = pyttsx3.init() # object creation
     voices = engine.getProperty('voices')  
     engine.setProperty('voice', voices[1].id)
@@ -100,7 +100,7 @@ if img_file_buffer is not None:
     img.save('tmp.jpg')
     st.image(img) 
     get_prediction()
-    talk()
+    talk(text)
     os.remove('tmp.jpg')
 
 st.markdown('<center style="opacity: 70%">OR</center>', unsafe_allow_html=True)
