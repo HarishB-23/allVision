@@ -79,7 +79,7 @@ def get_prediction():
     st.write(text)
 
 def talk(text):
-    engine = pyttsx3.init() # object creation
+    
     voices = engine.getProperty('voices')  
     engine.setProperty('voice', voices[1].id)
     engine.say(text)
@@ -99,6 +99,7 @@ if img_file_buffer is not None:
     img = img.convert('RGB')
     img.save('tmp.jpg')
     st.image(img) 
+    engine = pyttsx3.init() # object creation
     get_prediction()
     talk(text)
     os.remove('tmp.jpg')
