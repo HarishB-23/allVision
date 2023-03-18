@@ -5,8 +5,7 @@ import requests
 import glob
 import time
 from PIL import Image
-import googletrans
-from googletrans import Translator
+
 from model import get_caption_model, generate_caption
 import pyttsx3
 import warnings
