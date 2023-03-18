@@ -100,7 +100,7 @@ if img_file_buffer is not None:
     img.save('tmp.jpg')
     st.image(img)
     get_prediction()
-    talk(text)
+    talk()
     os.remove('tmp.jpg')
 
 st.markdown('<center style="opacity: 70%">OR</center>', unsafe_allow_html=True)
